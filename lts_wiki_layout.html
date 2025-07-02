@@ -1,0 +1,98 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>LTS Group Wiki Layout</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+        header {
+            background-color: #002147;
+            color: white;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        header input[type="search"] {
+            padding: 5px;
+            font-size: 14px;
+        }
+        .container {
+            display: flex;
+            height: calc(100vh - 60px);
+        }
+        nav {
+            width: 250px;
+            background-color: #f4f4f4;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+        nav a {
+            display: block;
+            margin-bottom: 10px;
+            text-decoration: none;
+            color: #002147;
+            font-weight: bold;
+        }
+        main {
+            flex-grow: 1;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+        section {
+            display: none;
+        }
+        section.active {
+            display: block;
+        }
+        footer {
+            text-align: center;
+            padding: 10px;
+            font-size: 12px;
+            background-color: #eee;
+        }
+    </style>
+    <script>
+        function showSection(id) {
+            const sections = document.querySelectorAll("section");
+            sections.forEach(section => section.classList.remove("active"));
+            document.getElementById(id).classList.add("active");
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <div><strong>LTS Group Wiki</strong></div>
+        <input type="search" placeholder="Search...">
+    </header>
+    <div class="container">
+        <nav>
+            <a href="#" onclick="showSection('intro')">General Introduction</a>
+            <a href="#" onclick="showSection('org')">Organization & HR</a>
+            <a href="#" onclick="showSection('process')">Department Processes</a>
+        </nav>
+        <main>
+            <section id="intro" class="active">
+                <h2>Welcome to LTS Group's Wiki</h2>
+                <p>Welcome to the internal Wiki system of LTS Group!</p>
+                <p>This Wiki serves as a central hub for documentation, procedures, technical guidelines, and shared knowledge contributed by our team members. Our goal is to build a dynamic, accessible knowledge base that enhances productivity, supports onboarding, and promotes continuous learning.</p>
+            </section>
+            <section id="org">
+                <h2>Organization & Human Resources</h2>
+                <p>Information about company structure, HR policies, and team responsibilities.</p>
+            </section>
+            <section id="process">
+                <h2>Department Processes</h2>
+                <p>Detailed workflows, SOPs, and operational guidelines for each department.</p>
+            </section>
+        </main>
+    </div>
+    <footer>
+        Last edited by NamVH@ltsgroup.dev on 06/21/2019
+    </footer>
+</body>
+</html>
